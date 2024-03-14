@@ -18,7 +18,9 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     private void Fire()
     {
-        myRigidbody2D.velocity = Vector2.down * speed; 
+        myRigidbody2D.velocity = Vector2.down * speed;
+        AudioSource audioSrc = GetComponent<AudioSource>();
+        audioSrc.Play();
         // Debug.Log("Wwweeeeee");
     }
 }

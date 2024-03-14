@@ -20,6 +20,8 @@ public class Bullet : MonoBehaviour
     {
         myRigidbody2D.velocity = Vector2.up * speed; 
         // Debug.Log("Wwweeeeee");
+        AudioSource audioSrc = GetComponent<AudioSource>();
+        audioSrc.Play();
     }
 
     

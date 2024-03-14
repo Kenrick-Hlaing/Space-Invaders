@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
             Destroy(collision.gameObject);
             OnEnemyDied.Invoke(points);
             GetComponent<Animator>().SetTrigger("Death Trigger");
+            AudioSource audioSrc = GetComponent<AudioSource>();
+            audioSrc.Play();
         }
     }
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -58,11 +59,14 @@ public class Player : MonoBehaviour
         // Debug.Log("Ouch!");
         Destroy(other.gameObject);
         GetComponent<Animator>().SetTrigger("Death Trigger");
+        AudioSource audioSrc = GetComponent<AudioSource>();
+        audioSrc.Play();
     }
 
     void DeathAnimationComplete()
     {
         Debug.Log("Player died");
         Destroy(gameObject);
+        SceneManager.LoadScene("CreditScene");
     }
 }
